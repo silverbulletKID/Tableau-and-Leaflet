@@ -1,8 +1,5 @@
 ---
-title: "R Notebook"
-output:
-  html_document:
-    df_print: paged
+output: html_document
 runtime: shiny
 ---
 #Tableau and Leaflet-A Comparison in Geospatial Data Interactive Visualization
@@ -160,13 +157,13 @@ Once a basic map is built we can start visualizing patterns by adding Marks. The
 
 - Size: Population
 
-![Tableau Example 1](C:\Users\tusha\OneDrive\Documents\Columbia Spring 2019 Courses\Graphics\Community contribution\tableau_example_1_basic.png)
+![Tableau Example 1](/Users/zhongming/Desktop/assignment/data\ visulization/community/tableau_example_1_basic.png)
 
 ___
 
 We can also color states by population by adding the population Measure to Marks, as shown below - 
 
-![Tableau Example 2](C:\Users\tusha\OneDrive\Documents\Columbia Spring 2019 Courses\Graphics\Community contribution\tableau_example_2_basic.png)
+![Tableau Example 2](/Users/zhongming/Desktop/assignment/data\ visulization/community/tableau_example_2_basic.png)
 
 ___
 
@@ -182,7 +179,7 @@ Add following Marks:
 
 This gives the following basic proportional symbol map. The larger data points represent earthquakes with larger magnitudes, and the smaller data points represent earthquakes with smaller magnitudes.
 
-![Tableau Example 3](C:\Users\tusha\OneDrive\Documents\Columbia Spring 2019 Courses\Graphics\Community contribution\Proportional_symbol_maps.png)
+![Tableau Example 3](/Users/zhongming/Desktop/assignment/data\ visulization/community/Proportional_symbol_maps.png)
 
 
 ___
@@ -193,7 +190,7 @@ You can play around with Marks to add Color (it is also possible to change color
 It shows dark orange data points which represent earthquakes with higher magnitudes, while the dark blue data points represent earthquakes with lower magnitudes.
 
 
-![Tableau Example 4](C:\Users\tusha\OneDrive\Documents\Columbia Spring 2019 Courses\Graphics\Community contribution\Proportional_symbol_maps_2.png)
+![Tableau Example 4](/Users/zhongming/Desktop/assignment/data\ visulization/community/Proportional_symbol_maps_2.png)
 
 
 ___
@@ -202,7 +199,7 @@ ___
 
 Another way we can visualize the city dataset is by using heatmaps to show concentrations of cities in the US. This can be done easily by changing the Marks setting from Automatic to Density which will generate a heatmap. The following plot shows the heatmap of cities in the US. The darker portions represent a higher density of cities and vice versa for lighter portions.
 
-![Tableau Example 5](C:\Users\tusha\OneDrive\Documents\Columbia Spring 2019 Courses\Graphics\Community contribution\cities.png)
+![Tableau Example 5](/Users/zhongming/Desktop/assignment/data\ visulization/community/cities.png)
 
 
 ___
