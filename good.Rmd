@@ -1,6 +1,9 @@
 ---
 title: "R Notebook"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
+runtime: shiny
 ---
 #Tableau and Leaflet-A Comparison in Geospatial Data Interactive Visualization
 
@@ -28,14 +31,14 @@ Leaflet is a R package that allows you to build interative map without strong kn
 The best way to present geospatial data is using both shiny and leaflet. Here is the project I did using leaflet and shiny: 
 https://mingzhong.shinyapps.io/hospital_intelligence/
 
-![Shiny App Example](..\data\ visulization/shinyapp.jpeg )
+![Shiny App Example](/Users/zhongming/Desktop/assignment/data\ visulization/community/shinyapp.jpeg)
 
 Pretty cool, right? Let's start with several simple examples and get the gist of leaflet.
 
 >Installation
 
 ```{r}
-install.packages("leaflet")
+#install.packages("leaflet")
 # to install the development version from Github, run
 # devtools::install_github("rstudio/leaflet")
 ```
@@ -102,35 +105,36 @@ library(leaflet)
 r_colors <- rgb(t(col2rgb(colors()) / 255))
 names(r_colors) <- colors()
 
-ui <- fluidPage(
+shinyApp(
+  ui <- fluidPage(
   leafletOutput("mymap"),
   p(),
   actionButton("recalc", "New points")
-)
+  ),
 
-server <- function(input, output, session) {
+  server <- function(input, output, session) {
 
-  points <- eventReactive(input$recalc, {
+    points <- eventReactive(input$recalc, {
     cbind(rnorm(40) * 2 + 13, rnorm(40) + 48)
-  }, ignoreNULL = FALSE)
+    }, ignoreNULL = FALSE)
 
-  output$mymap <- renderLeaflet({
+    output$mymap <- renderLeaflet({
     leaflet() %>%
-      addProviderTiles(providers$Stamen.TonerLite,
-        options = providerTileOptions(noWrap = TRUE)
-      ) %>%
-      addMarkers(data = points())
-  })
-}
+        addProviderTiles(providers$Stamen.TonerLite,
+          options = providerTileOptions(noWrap = TRUE)
+        ) %>%
+        addMarkers(data = points())
+    })
+},options = list(height = 500)
+  )
 
-shinyApp(ui, server)
 ```
 
-![Shiny App Screenshot](../data\ visulization/shinyapp2.png)
+![Shiny App Screenshot](/Users/zhongming/Desktop/assignment/data\ visulization/community/shinyapp2.png)
 
 We can even go further and add in some button to interact with map. Besides, we can even combine other kinds of graphs to make our data presentation even better !
 
-![Shiny App Screenshot](../data\ visulization/shinyapp3.jpeg)
+![Shiny App Screenshot](/Users/zhongming/Desktop/assignment/data\ visulization/community/shinyapp3.jpeg)
 
 
 #Tableau
