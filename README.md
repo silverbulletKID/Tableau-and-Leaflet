@@ -1,5 +1,4 @@
-# community
-tableau and leaflet
+# tableau and leaflet
 
 html file:
 https://github.com/silverbulletKID/community/blob/master/docs/good.html
